@@ -1,18 +1,9 @@
 pipeline {
-    agent {
-        docker {
-            image 'openjdk:17-slim'
-        }
-    }
-
-    tools {
-        jdk 'JDK-17'  // Must match the JDK name in Jenkins tools
-    }
+    agent any
 
     environment {
-        JAVA_HOME = tool(name: 'JDK-17', type: 'hudson.model.JDK')
-        PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
-        ORG_GRADLE_JAVA_HOME = "${env.JAVA_HOME}"  // <-- Add this line
+        JAVA_HOME = '/usr/lib/jvm/java-17-openjdk'  // set your installed JDK path
+        PATH = "${JAVA_HOME}/bin:${env.PATH}"
     }
 
     stages {
