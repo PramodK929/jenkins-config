@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        JAVA_HOME = '/usr/lib/jvm/java-17-openjdk'  // set your installed JDK path
+        JAVA_HOME = '/Users/pramodkumar/.sdkman/candidates/java/current'  // set your installed JDK path
         PATH = "${JAVA_HOME}/bin:${env.PATH}"
     }
 
