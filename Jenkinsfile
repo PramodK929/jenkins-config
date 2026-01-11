@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'openjdk:17-slim'
+        }
+    }
 
     tools {
         jdk 'JDK-17'  // Must match the JDK name in Jenkins tools
